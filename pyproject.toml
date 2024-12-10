@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "movie-flask"
+version = "0.1.0"
+description = "A backend project made using flask and SQLAlchemy"
+authors = ["parrothacker1 <rajeevgoutham1@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.1.0"
+sqlalchemy = "^2.0.36"
+gunicorn = "^23.0.0"
+flask-jwt-extended = "^4.7.1"
+datetime = "^5.5"
+psycopg2-binary = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

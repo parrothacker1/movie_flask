@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: movie_db
+    environment:
+      POSTGRES_USER: parrot
+      POSTGRES_PASSWORD: parrot
+      POSTGRES_DB: movies
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  webserver:
+    build:
+      context: ./
+    container_name: movie_server
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080" 
+    restart: always
+    env_file: .env
+
+volumes:
+  postgres_data:
+    driver: local
